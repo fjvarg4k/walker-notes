@@ -3,7 +3,9 @@ const Joi = require('joi');
 
 // Maps the properties of a dog
 // const dogSchema = mongoose.Schema({
-//   dogName: {Type: String, required: true}
+//   dogName: {type: String, required: true},
+//   dogBreed: String,
+//   dogAge: Number
 // });
 
 // Maps the properties of a dog owner, some owners may have multiple dogs so dogSchema is nested in document

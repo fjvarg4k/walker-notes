@@ -23,16 +23,6 @@ chai.use(chaiHttp);
 describe('tests for /api/user', function() {
   let testUser;
 
-  // Generates a User object
-  function generateUserData() {
-    return {
-      firstName: `${faker.name.firstName()}`,
-      lastName: `${faker.name.lastName()}`,
-      username: `${faker.internet.userName()}`,
-      password: `${faker.internet.password()}`
-    };
-  }
-
   // Deletes the database in order to make sure data does not stick around
   // before next test
   // function tearDownDb() {
@@ -54,6 +44,7 @@ describe('tests for /api/user', function() {
       .catch(err => {
         console.error(err);
       });
+    // return User.create(testUser);
   });
 
   afterEach(function() {
@@ -68,29 +59,73 @@ describe('tests for /api/user', function() {
           reject(err);
         });
     });
+    // return mongoose.connection.dropDatabase();
   });
 
   after(function() {
     return closeServer();
   });
 
-  it('should return all users', function() {
-    return chai.request(app)
-      .get('/api/user')
-      .then(res => {
-        expect(res).to.have.status(200);
-        expect(res).to.be.json;
-        expect(res.body).to.be.a('array');
-        expect(res.body).to.have.lengthOf.at.least(1);
-        expect(res.body[0]).to.include.keys('id', 'firstName', 'lastName', 'username', )
-      });
+  describe('GET', function() {
+    it('should return all users', function() {
+      return chai.request(app)
+        .get('/api/user')
+        .then(res => {
+          expect(res).to.have.status(200);
+          expect(res).to.be.json;
+          expect(res.body).to.be.a('array');
+          expect(res.body).to.have.lengthOf.at.least(1);
+          expect(res.body[0]).to.include.keys('id', 'firstName', 'lastName', 'username', )
+        });
+    });
+
+    it('should return a specific user', function() {
+      let searchUser;
+      return chai.request(app)
+        .get('/api/user')
+        .then(res => {
+          expect(res).to.have.status(200);
+          expect(res).to.be.json;
+          expect(res.body).to.be.a('array');
+          expect(res.body).to.have.lengthOf.at.least(1);
+          searchUser = res.body[0];
+          return User.findById(searchUser.id);
+        })
+        .then(user => {
+          expect(searchUser.id).to.equal(user.id);
+          expect(searchUser.firstName).to.equal(user.firstName);
+          expect(searchUser.lastName).to.equal(user.lastName);
+          expect(searchUser.username).to.equal(user.username);
+        });
+    });
   });
 
-  // it('should return a specific user', function() {
-  //   // body...
-  // });
-  //
-  // it('should create a new user', function(done) {
-  //   // body...
-  // });
+  describe('POST', function() {
+    it('should create a new user', function() {
+      let newUser = generateUserData();
+      return chai.request(app)
+        .post('/api/user')
+        .send(newUser)
+        .then(res => {
+          // console.log(res);
+          expect(res).to.have.status(201);
+          expect(res).to.be.json;
+          expect(res.body).to.be.a('object')
+          expect(res.body).to.include.keys('id', 'username', 'firstName', 'lastName');
+          expect(res.body.firstName).to.equal(newUser.firstName);
+          expect(res.body.lastName).to.equal(newUser.lastName);
+          expect(res.body.username).to.equal(newUser.username);
+        });
+    });
+  });
+
+  // Generates a User object
+  function generateUserData() {
+    return {
+      firstName: `${faker.name.firstName()}`,
+      lastName: `${faker.name.lastName()}`,
+      username: `${faker.internet.userName()}`,
+      password: `${faker.internet.password()}`
+    };
+  }
 });

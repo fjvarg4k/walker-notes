@@ -48,7 +48,7 @@ userRouter.get('/', (req, res) => {
   User.find()
     .then(users => {
       return res.status(200).json(
-        users.map(user => user.serialize)
+        users.map(user => user.serialize())
       );
     })
     .catch(err => {
