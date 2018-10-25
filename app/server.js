@@ -7,6 +7,7 @@ const passport = require('passport');
 const { PORT, DATABASE_URL } = require('./config');
 const { authRouter } = require('./auth/router');
 const { userRouter } = require('./user/router');
+const { dogOwnerRouter } = require('./dogOwner/router');
 const { localStrategy, jwtStrategy } = require('./auth/strategy');
 
 let server;
@@ -22,8 +23,9 @@ passport.use(localStrategy);
 passport.use(jwtStrategy);
 
 // Routers
-app.use('/api/user/', userRouter);
-app.use('/api/auth/', authRouter);
+app.use('/api/user', userRouter);
+app.use('/api/auth', authRouter);
+app.use('/api/owner', dogOwnerRouter);
 
 // If we make an HTTP request that is not handled by the server, we return 404 'Not Found'
 app.use('*', (req, res) => {
