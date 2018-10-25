@@ -8,12 +8,12 @@ const Joi = require('joi');
 
 // Maps the properties of a dog owner, some owners may have multiple dogs so dogSchema is nested in document
 const dogOwnerSchema = mongoose.Schema({
-  user: {Type: mongoose.Schema.Types.ObjectId, ref: 'user'},
-  firstName: {Type: String, required: true},
-  lastName: {Type: String, required: true},
-  dogNames: {Type: String, required: true},
-  address: {Type: String, required: true},
-  notes: {Type: String, required: true},
+  user: {type: mongoose.Schema.Types.ObjectId, ref: 'user'},
+  firstName: {type: String, required: true},
+  lastName: {type: String, required: true},
+  dogNames: {type: String, required: true},
+  address: {type: String, required: true},
+  notes: {type: String, required: true},
   walkTimeRange: String,
   walkDays: String,
   phoneNumber: String,

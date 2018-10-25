@@ -42,4 +42,29 @@ userRouter.post('/', (req, res) => {
     });
 });
 
+
+// Grabs all users
+userRouter.get('/', (req, res) => {
+  User.find()
+    .then(users => {
+      return res.status(200).json(
+        users.map(user => user.serialize)
+      );
+    })
+    .catch(err => {
+      return res.status(500).json(err)
+    });
+});
+
+// Grabs a specific user
+userRouter.get('/:userid', (req, res) => {
+  User.findById(req.params.userid)
+    .then(user => {
+      return res.status(200).json(user.serialize());
+    })
+    .catch(err => {
+      return res.status(500).json(err);
+    });
+});
+
 module.exports = { userRouter };

@@ -95,7 +95,7 @@ dogOwnerRouter.put('/:ownerid', jwtPassportMiddleware, (req, res) => {
 
   DogOwner.findByIdAndUpdate(req.params.ownerid, dogOwnerUpdate)
     .then(() => {
-      return res.status(201).end();
+      return res.status(204).end();
     })
     .catch(err => {
       return res.status(500).json(err)
@@ -106,7 +106,7 @@ dogOwnerRouter.put('/:ownerid', jwtPassportMiddleware, (req, res) => {
 dogOwnerRouter.delete('/:ownerid', jwtPassportMiddleware, (req, res) => {
   DogOwner.findByIdAndDelete(req.params.ownerid)
     .then(() => {
-      return res.status(201).end();
+      return res.status(204).end();
     })
     .catch(err => {
       return res.status(500).json(err);

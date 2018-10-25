@@ -16,7 +16,7 @@ const app = express();
 // Middleware
 app.use(morgan('common'));
 app.use(express.json());
-app.use(express.static('../public'));
+app.use(express.static('./public'));
 
 // Used when authenticating user login
 passport.use(localStrategy);
