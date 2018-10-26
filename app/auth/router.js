@@ -1,5 +1,5 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
+const jsonwebtoken = require('jsonwebtoken');
 
 const { localPassportMiddleware, jwtPassportMiddleware } = require('../auth/strategy');
 const { JWT_SECRET, JWT_EXPIRY } = require('../config');
@@ -7,7 +7,7 @@ const { JWT_SECRET, JWT_EXPIRY } = require('../config');
 const authRouter = express.Router();
 
 function createJwtToken(user) {
-  return jwt.sign({ user }, JWT_SECRET, {
+  return jsonwebtoken.sign({ user }, JWT_SECRET, {
     subject: user.username,
     expiresIn: JWT_EXPIRY,
     algorithm: 'HS256'
