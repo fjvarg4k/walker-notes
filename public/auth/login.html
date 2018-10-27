@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Keep track of dog walking client info">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+  </head>
+  <body>
+    <nav role="navigation">
+      <h1>Walker Notes</h1>
+      <div id="login-menu">
+        <ul>
+          <li><a href="./signup.html">Sign Up</a></li>
+          <li><a href="/">Demo</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main">
+      <form id="login-form">
+        <fieldset>
+          <legend>Login</legend>
+          <label for="username-login">
+            Username: <input id="username-login" type="text" name="username" required>
+          </label>
+          <label for="password-login">
+            Password: <input id="password-login" type="text" name="password" required>
+          </label>
+          <input type="submit" id="submit-login-btn" name="submit-login" value="Login">
+        </fieldset>
+      </form>
+
+      <div id="error-message"></div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../utils/cache.js"></script>
+    <script src="../utils/render.js"></script>
+    <script src="../utils/http.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>

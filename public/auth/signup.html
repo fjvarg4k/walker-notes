@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Keep track of dog walking client info">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+  </head>
+  <body>
+    <nav role="navigation">
+      <h1>Walker Notes</h1>
+      <div id="signup-menu">
+        <ul>
+          <li><a href="./login.html">Log in</a></li>
+          <li><a href="/">Demo</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main">
+      <form id="sign-up-form">
+        <fieldset>
+          <legend>Sign up</legend>
+          <label for="firstName-signup">
+            First Name: <input id="firstName-signup" type="text" name="firstName" required>
+          </label>
+          <label for="lastName-signup">
+            Last Name: <input id="lastName-signup" type="text" name="lastName" required>
+          </label>
+          <label for="username-signup">
+            Username: <input id="username-signup" type="text" name="username" required>
+          </label>
+          <label for="password-signup">
+            Password: <input id="password-signup" type="text" name="password" required>
+          </label>
+          <input type="submit" id="submit-signup-btn" name="submit-signup" value="Create Account">
+        </fieldset>
+      </form>
+
+      <div id="error-message"></div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../utils/cache.js"></script>
+    <script src="../utils/render.js"></script>
+    <script src="../utils/http.js"></script>
+    <!-- <script src="../index.js"></script> -->
+    <script src="auth.js"></script>
+  </body>
+</html>

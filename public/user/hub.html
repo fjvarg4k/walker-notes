@@ -7,28 +7,24 @@
     <title>Walker Notes</title>
   </head>
   <body>
-
     <nav role="navigation">
       <h1>Walker Notes</h1>
-      <div id="unauthenticated-menu" hidden>
+      <div id="hub-menu">
         <ul>
-          <li><a href="/auth/signup.html">Sign Up</a></li>
-          <li><a href="/auth/login.html">Log in</a></li>
-          <li><a href="/">Demo</a></li>
-        </ul>
-      </div>
-      <div id="authenticated-menu" hidden>
-        <ul>
-          <li><a href="./user/hub.html">View Client Info</a></li>
-          <li><a href="/">Log out</a></li>
+          <li><h4><a href="./dog-create.html">Add New Client</a></h4></li>
+          <li><button id="logout-btn">Logout</button></li>
         </ul>
       </div>
     </nav>
 
+    <main role="main">
+      <div id="client-info-list"></div>
+    </main>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="./utils/cache.js"></script>
-    <script src="./utils/render.js"></script>
-    <script src="./utils/http.js"></script>
-    <script src="./index.js"></script>
+    <script src="../utils/cache.js"></script>
+    <script src="../utils/render.js"></script>
+    <script src="../utils/http.js"></script>
+    <script src="./user.js"></script>
   </body>
 </html>
