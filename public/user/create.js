@@ -8,6 +8,7 @@ $(document).ready(onPageLoad);
 function onPageLoad() {
   checkUserValidation();
   watchCreationForm();
+  watchEditBtn();
 
   STATE.authUser = CACHE.getAuthenticatedUser();
 }
@@ -50,5 +51,13 @@ function watchCreationForm() {
         console.error(err);
       }
     });
+  });
+}
+
+// Logs user out when Logout button is clicked
+function watchLogoutBtn() {
+  $('#logout-btn').click(event => {
+    CACHE.deleteAuthenticatedUser();
+    window.open('/', '_self');
   });
 }

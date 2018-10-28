@@ -11,6 +11,8 @@ function onPageLoad() {
   renderUserDetails();
   updateAuthUI();
   watchDogOwnerCard();
+  watchDeleteBtn();
+  // watchEditDogOwner();
   // renderDogOwnersList();
   // renderDogOwnerDetails(),
   // renderEditDogOwnerDetails();
@@ -60,26 +62,23 @@ function watchDogOwnerCard() {
   });
 }
 
-// // Renders a detailed view of a specific dog walking client's info
-// function renderDogOwnerDetails(dogOwner) {
-//   $('#dogOwner-details').html(`
-//     <ul>
-//       <li class="dogOwner-card-header"><h3>${dogOwner.firstName} ${dogOwner.lastName}
-//       <button id="edit-dogOwner-btn">Edit</button>
-//       <button id="delete-dogOwner-btn">Delete</button></h3></li>
-//       <li class="dogOwner-card-dogName">${dogOwner.dogNames}</li>
-//       <li class="dogOwner-card-address">${dogOwner.address}</li>
-//       <li class="dogOwner-card-walkDays">${dogOwner.walkDays}</li>
-//       <li class="dogOwner-card-walkTimeRange">${dogOwner.walkTimeRange}</li>
-//       <li class="dogOwner-card-phoneNumber">${dogOwner.phoneNumber}</li>
-//       <li class="dogOwner-card-email">${dogOwner.email}</li>
-//       <li class="dogOwner-card-notes">${dogOwner.notes}</li>
-//     </ul>
-//   `);
-// }
-//
-// // Renders an editable view of a specific dog walking client's info
-//
-// function renderEditDogOwnerDetails(dogOwner) {
-//
-// }
+// If delete btn is clicked, delete specific client's info
+function watchDeleteBtn() {
+  $('#client-info-list').on('click', '#delete-dogOwner-btn', event => {
+    event.stopImmediatePropagation();
+    const dogOwnerId = $(event.currentTarget).closest('#dogOwner-card').attr('dogOwner-id-data');
+    const confirmDelete = confirm('Are you sure you want to delete this?');
+    if (confirmDelete) {
+      HTTP.deleteDogOwner({
+        dogOwnerId: dogOwnerId,
+        jwtToken: STATE.authUser.jwtToken,
+        onSuccess: () => {
+          HTTP.getUserClientsInfo({
+            jwtToken: STATE.authUser.jwtToken,
+            onSuccess: RENDER.renderDogOwnersList
+          });
+        }
+      });
+    }
+  })
+}

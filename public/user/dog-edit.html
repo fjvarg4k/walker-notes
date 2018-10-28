@@ -18,40 +18,7 @@
     </nav>
 
     <main role="main">
-      <form id="new-client-form">
-        <fieldset>
-          <legend>Edit Client Details</legend>
-          <label for="firstName-edit-client">
-            First Name: <input id="firstName-edit-client" type="text" name="firstName" required>
-          </label>
-          <label for="lastName-edit-client">
-            Last Name: <input id="lastName-edit-client" type="text" name="lastName" required>
-          </label>
-          <label for="dogNames-edit-client">
-            Dog Name(s): <input id="dogNames-edit-client" type="text" name="dogNames" required>
-          </label>
-          <label for="address-edit-client">
-            Address: <input id="address-edit-client" type="text" name="address" required>
-          </label>
-          <label for="notes-edit-client">
-            Notes: <textarea id="notes-edit-client" row="50" cols="40" name="notes" required></textarea>
-          </label>
-          <label for="walkTimeRange-edit-client">
-            Walk Time Range: <input id="walkTimeRange-edit-client" type="text" name="walkTimeRange">
-          </label>
-          <label for="walkDays-edit-client">
-            Days Walk Needed: <input id="walkDays-edit-client" type="text" name="walkDays">
-          </label>
-          <label for="phoneNumber-edit-client">
-            Phone Number: <input id="phoneNumber-edit-client" type="text" name="phoneNumber">
-          </label>
-          <label for="email-edit-client">
-            Email: <input id="email-edit-client" type="email" name="email">
-          </label>
-          <input type="submit" id="submit-edit-client-btn" name="submit-edit-client" value="Submit">
-          <input type="button" id="cancel-edit-client-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">
-        </fieldset>
-      </form>
+      <div class="edit-client-details"></div>
 
       <div id="error-message"></div>
     </main>
@@ -60,6 +27,7 @@
     <script src="../utils/cache.js"></script>
     <script src="../utils/render.js"></script>
     <script src="../utils/http.js"></script>
+    <script src="../utils/misc.js"></script>
     <script src="./edit.js"></script>
   </body>
 </html>

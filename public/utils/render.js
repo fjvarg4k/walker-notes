@@ -15,7 +15,6 @@ function renderDogOwnersList(dogOwners) {
       <div id="dogOwner-card" dogOwner-id-data="${dogOwner.id}">
         <ul>
           <li class="dogOwner-card-header"><h3>${dogOwner.firstName} ${dogOwner.lastName}
-          <button id="edit-dogOwner-btn">Edit</button>
           <button id="delete-dogOwner-btn">Delete</button></h3></li>
           <li class="dogOwner-card-dogName">${dogOwner.dogNames}</li>
           <li class="dogOwner-card-address">${dogOwner.address}</li>
@@ -27,17 +26,19 @@ function renderDogOwnersList(dogOwners) {
 
 // Renders a detailed view of a specific dog walking client's info
 function renderDogOwnerDetails(dogOwner) {
-  $('#client-info-details').html(`
-    <ul>
-      <li class="dogOwner-card-header"><h3>${dogOwner.firstName} ${dogOwner.lastName}</h3></li>
-      <li class="dogOwner-card-dogName">${dogOwner.dogNames}</li>
-      <li>${dogOwner.address}</li>
-      ${checkforUndefinedValues(dogOwner.walkDays)}
-      ${checkforUndefinedValues(dogOwner.walkTimeRange)}
-      ${checkforUndefinedValues(dogOwner.phoneNumber)}
-      ${checkforUndefinedValues(dogOwner.email)}
-      <li>${dogOwner.notes}</li>
-    </ul>
+  $('main').html(`
+    <div id="dogOwner-details" dogOwner-id-data="${dogOwner.id}">
+      <ul>
+        <li class="dogOwner-card-header"><h3>${dogOwner.firstName} ${dogOwner.lastName}</h3></li>
+        <li class="dogOwner-card-dogName">${dogOwner.dogNames}</li>
+        <li>${dogOwner.address}</li>
+        ${checkforUndefinedValues(dogOwner.walkDays)}
+        ${checkforUndefinedValues(dogOwner.walkTimeRange)}
+        ${checkforUndefinedValues(dogOwner.phoneNumber)}
+        ${checkforUndefinedValues(dogOwner.email)}
+        <li>${dogOwner.notes}</li>
+      </ul>
+    </div>
   `);
 }
 
@@ -53,5 +54,40 @@ function checkforUndefinedValues(dogOwnerDetail) {
 // Renders an editable view of a specific dog walking client's info
 
 function renderEditDogOwnerDetails(dogOwner) {
-
+  $('#edit-client-details').html(`
+    <form id="edit-client-form">
+      <fieldset>
+        <legend>Edit Client Details</legend>
+        <label for="firstName-edit-client">
+          First Name: <input id="firstName-edit-client" type="text" name="firstName" value=${dogOwner.firstName} required>
+        </label>
+        <label for="lastName-edit-client">
+          Last Name: <input id="lastName-edit-client" type="text" name="lastName" value=${dogOwner.lastName} required>
+        </label>
+        <label for="dogNames-edit-client">
+          Dog Name(s): <input id="dogNames-edit-client" type="text" name="dogNames" value=${dogOwner.dogName} required>
+        </label>
+        <label for="address-edit-client">
+          Address: <input id="address-edit-client" type="text" name="address" value=${dogOwner.address} required>
+        </label>
+        <label for="notes-edit-client">
+          Notes: <textarea id="notes-edit-client" row="50" cols="40" name="notes" value=${dogOwner.notes} required></textarea>
+        </label>
+        <label for="walkTimeRange-edit-client">
+          Walk Time Range: <input id="walkTimeRange-edit-client" type="text" name="walkTimeRange" value=${dogOwner.firstName || ''}>
+        </label>
+        <label for="walkDays-edit-client">
+          Days Walk Needed: <input id="walkDays-edit-client" type="text" name="walkDays" value=${dogOwner.walkDays || ''}>
+        </label>
+        <label for="phoneNumber-edit-client">
+          Phone Number: <input id="phoneNumber-edit-client" type="text" name="phoneNumber" value=${dogOwner.phoneNumber || ''}>
+        </label>
+        <label for="email-edit-client">
+          Email: <input id="email-edit-client" type="email" name="email" value=${dogOwner.email || ''}>
+        </label>
+        <input type="submit" id="submit-edit-client-btn" name="submit-edit-client" value="Save Changes">
+        <input type="button" id="cancel-edit-client-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">
+      </fieldset>
+    </form>
+  `);
 }
