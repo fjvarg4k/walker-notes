@@ -65,25 +65,25 @@ function renderEditDogOwnerDetails(dogOwner) {
           Last Name: <input id="lastName-edit-client" type="text" name="lastName" value=${dogOwner.lastName} required>
         </label>
         <label for="dogNames-edit-client">
-          Dog Name(s): <input id="dogNames-edit-client" type="text" name="dogNames" value=${dogOwner.dogName} required>
+          Dog Name(s): <textarea id="dogNames-edit-client" name="dogNames" required>${dogOwner.dogNames}</textarea>
         </label>
         <label for="address-edit-client">
-          Address: <input id="address-edit-client" type="text" name="address" value=${dogOwner.address} required>
+          Address: <textarea id="address-edit-client" name="address" required>${dogOwner.address}</textarea
         </label>
         <label for="notes-edit-client">
-          Notes: <textarea id="notes-edit-client" row="50" cols="40" name="notes" value=${dogOwner.notes} required></textarea>
+          Notes: <textarea id="notes-edit-client" row="50" cols="40" name="notes" required>${dogOwner.notes}</textarea>
         </label>
         <label for="walkTimeRange-edit-client">
-          Walk Time Range: <input id="walkTimeRange-edit-client" type="text" name="walkTimeRange" value=${dogOwner.firstName || ''}>
+          Walk Time Range: <input id="walkTimeRange-edit-client" type="text" name="walkTimeRange" value=${dogOwner.walkTimeRange}>
         </label>
         <label for="walkDays-edit-client">
-          Days Walk Needed: <input id="walkDays-edit-client" type="text" name="walkDays" value=${dogOwner.walkDays || ''}>
+          Days Walk Needed: <input id="walkDays-edit-client" type="text" name="walkDays" value=${dogOwner.walkDays}>
         </label>
         <label for="phoneNumber-edit-client">
-          Phone Number: <input id="phoneNumber-edit-client" type="text" name="phoneNumber" value=${dogOwner.phoneNumber || ''}>
+          Phone Number: <input id="phoneNumber-edit-client" type="text" name="phoneNumber" value=${dogOwner.phoneNumber}>
         </label>
         <label for="email-edit-client">
-          Email: <input id="email-edit-client" type="email" name="email" value=${dogOwner.email || ''}>
+          Email: <input id="email-edit-client" type="email" name="email" value=${dogOwner.email}>
         </label>
         <input type="submit" id="submit-edit-client-btn" name="submit-edit-client" value="Save Changes">
         <input type="button" id="cancel-edit-client-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">

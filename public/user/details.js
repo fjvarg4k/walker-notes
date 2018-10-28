@@ -31,7 +31,7 @@ function checkUserValidation() {
 
 // If edit button is clicked, load edit page for that specific client
 function watchEditBtn() {
-  $('#edit-DogOwner-btn').click(event => {
+  $('#edit-btn').click(event => {
     // event.stopImmediatePropagation();
     // const dogOwnerId = $('#dogOwner-details').attr('dogOwner-id-data');
     const queryString = window.location.search;

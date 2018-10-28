@@ -16,10 +16,10 @@ const dogOwnerSchema = mongoose.Schema({
   dogNames: {type: String, required: true},
   address: {type: String, required: true},
   notes: {type: String, required: true},
-  walkTimeRange: String,
-  walkDays: String,
-  phoneNumber: String,
-  email: String
+  walkTimeRange: {type: String, default: ''},
+  walkDays: {type: String, default: ''},
+  phoneNumber: {type: String, default: ''},
+  email: {type: String, default: ''}
 });
 
 // Defined an instance of a dog owner and check if user is populated
@@ -54,12 +54,12 @@ const dogOwnerJoiSchema = Joi.object().keys({
   firstName: Joi.string().min(1).trim().required(),
   lastName: Joi.string().min(1).trim().required(),
   dogNames: Joi.string().min(1).trim().required(),
-  address: Joi.string().min(8).trim().required(),
+  address: Joi.string().trim().required(),
   notes: Joi.string().min(8).trim().required(),
-  walkTimeRange: Joi.string().trim(),
-  walkDays: Joi.string().trim(),
-  phoneNumber: Joi.string().trim(),
-  email: Joi.string().trim()
+  walkTimeRange: Joi.string().trim().allow(''),
+  walkDays: Joi.string().trim().allow(''),
+  phoneNumber: Joi.string().trim().allow(''),
+  email: Joi.string().trim().allow('')
 });
 
 const DogOwner = mongoose.model('owner', dogOwnerSchema);

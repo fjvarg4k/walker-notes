@@ -12,10 +12,6 @@ function onPageLoad() {
   updateAuthUI();
   watchDogOwnerCard();
   watchDeleteBtn();
-  // watchEditDogOwner();
-  // renderDogOwnersList();
-  // renderDogOwnerDetails(),
-  // renderEditDogOwnerDetails();
 
   if (STATE.authUser) {
     HTTP.getUserClientsInfo({

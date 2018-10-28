@@ -8,7 +8,7 @@ $(document).ready(onPageLoad);
 function onPageLoad() {
   checkUserValidation();
   watchCreationForm();
-  watchEditBtn();
+  watchLogoutBtn();
 
   STATE.authUser = CACHE.getAuthenticatedUser();
 }
