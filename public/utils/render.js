@@ -32,22 +32,22 @@ function renderDogOwnerDetails(dogOwner) {
         <li class="dogOwner-card-header"><h3>${dogOwner.firstName} ${dogOwner.lastName}</h3></li>
         <li class="dogOwner-card-dogName">${dogOwner.dogNames}</li>
         <li>${dogOwner.address}</li>
-        ${checkforUndefinedValues(dogOwner.walkDays)}
-        ${checkforUndefinedValues(dogOwner.walkTimeRange)}
-        ${checkforUndefinedValues(dogOwner.phoneNumber)}
-        ${checkforUndefinedValues(dogOwner.email)}
+        ${checkforEmptyValues(dogOwner.walkDays)}
+        ${checkforEmptyValues(dogOwner.walkTimeRange)}
+        ${checkforEmptyValues(dogOwner.phoneNumber)}
+        ${checkforEmptyValues(dogOwner.email)}
         <li>${dogOwner.notes}</li>
       </ul>
     </div>
   `);
 }
 
-// Checks if some values are undefined. If they are, remove from page
-function checkforUndefinedValues(dogOwnerDetail) {
-  if (!typeof dogOwnerDetail === 'undefined') {
-    return `<li>${dogOwnerDetail}</li>`;
+// Checks if some values are empty. If they are, remove from page
+function checkforEmptyValues(dogOwnerDetail) {
+  if (dogOwnerDetail === 'undefined') {
+    return `<li hidden>${dogOwnerDetail}</li>`;
   } else {
-    return '';
+    return `<li>${dogOwnerDetail}</li>`;
   }
 }
 
