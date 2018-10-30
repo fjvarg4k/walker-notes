@@ -8,6 +8,7 @@ $(document).ready(onPageLoad);
 function onPageLoad() {
   updateAuthUI();
   watchLogoutBtn();
+  watchDemoBtn();
   toggleHamburgerMenu();
 }
 
@@ -27,6 +28,31 @@ function watchLogoutBtn() {
     CACHE.deleteAuthenticatedUser();
     window.open('/', '_self');
   });
+}
+
+// Logs user into demo account
+function watchDemoBtn() {
+  $('#demo-login').click(event => {
+    const userData = {
+      username: 'demouser1124',
+      password: 'demopassword1124'
+    };
+
+    HTTP.loginUser({
+      userData,
+      onSuccess: res => {
+        const authUser = res.user;
+        authUser.jwtToken = res.jwtToken;
+        CACHE.saveAuthenticatedUser(authUser);
+        window.open('/user/hub.html', '_self');
+      },
+      onError: err => {
+        $('#error-message').html(`
+          <p>Your username and/or password were incorrect.</p>
+        `);
+      }
+    });
+  })
 }
 
 function toggleHamburgerMenu() {
