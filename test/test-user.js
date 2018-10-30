@@ -8,27 +8,8 @@ const { TEST_DATABASE_URL } = require('../app/config');
 const expect = chai.expect;
 chai.use(chaiHttp);
 
-
-// Create 10 sets of randomish user data and insert into mongo
-// function seedUserData() {
-//   console.info('seeding user data');
-//   const seedData = [];
-//
-//   for (let i = 1; i <= 10; i++) {
-//     seedData.push(generateUserData());
-//   }
-//   return User.insertMany(seedData);
-// }
-
 describe('tests for /api/user', function() {
   let testUser;
-
-  // Deletes the database in order to make sure data does not stick around
-  // before next test
-  // function tearDownDb() {
-  //   console.warn('Deleting database');
-  //   return mongoose.connection.dropDatabase();
-  // }
 
   // Start up the test server before running tests
   before(function() {
@@ -44,11 +25,9 @@ describe('tests for /api/user', function() {
       .catch(err => {
         console.error(err);
       });
-    // return User.create(testUser);
   });
 
   afterEach(function() {
-    // return tearDownDb();
     return new Promise((resolve, reject) => {
       mongoose.connection.dropDatabase()
         .then(res => {
@@ -59,7 +38,6 @@ describe('tests for /api/user', function() {
           reject(err);
         });
     });
-    // return mongoose.connection.dropDatabase();
   });
 
   after(function() {
@@ -107,7 +85,6 @@ describe('tests for /api/user', function() {
         .post('/api/user')
         .send(newUser)
         .then(res => {
-          // console.log(res);
           expect(res).to.have.status(201);
           expect(res).to.be.json;
           expect(res.body).to.be.a('object')

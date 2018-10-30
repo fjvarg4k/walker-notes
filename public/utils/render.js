@@ -18,9 +18,13 @@ function renderDogOwnersList(dogOwners) {
     return `
       <div id="dogOwner-card" class="dogOwner-card" dogOwner-id-data="${dogOwner.id}">
         <ul class="client-info">
-          <div class="client-header">
-            <li class="dogOwner-card-header">${dogOwner.firstName} ${dogOwner.lastName}</li>
-            <li><button id="delete-dogOwner-btn" class="delete-btn">Delete</button></li>
+          <div class="row client-header">
+            <div class="col-3">
+              <li class="dogOwner-card-header">${dogOwner.firstName} ${dogOwner.lastName}</li>
+            </div>
+            <div class="col-3"
+              <li><button id="delete-dogOwner-btn" class="delete-btn">Delete</button></li>
+            </div>
           </div>
           <li class="dogOwner-card-dogName">Dog(s): ${dogOwner.dogNames}</li>
           <li class="dogOwner-card-address">Address: ${dogOwner.address}</li>
@@ -35,15 +39,15 @@ function renderDogOwnersList(dogOwners) {
 function renderDogOwnerDetails(dogOwner) {
   $('main').html(`
     <div id="dogOwner-details" dogOwner-id-data="${dogOwner.id}">
-      <ul>
+      <ul class="client-details">
         <li class="dogOwner-card-header"><h3>${dogOwner.firstName} ${dogOwner.lastName}</h3></li>
-        <li class="dogOwner-card-dogName">${dogOwner.dogNames}</li>
-        <li>${dogOwner.address}</li>
-        ${checkforEmptyValues(dogOwner.walkDays)}
-        ${checkforEmptyValues(dogOwner.walkTimeRange)}
-        ${checkforEmptyValues(dogOwner.phoneNumber)}
-        ${checkforEmptyValues(dogOwner.email)}
-        <li>${dogOwner.notes}</li>
+        <li class="dogOwner-card-dogName">Dog(s): ${dogOwner.dogNames}</li>
+        <li>Address: ${dogOwner.address}</li>
+        <li>Days Walk Needed: ${checkforEmptyValues(dogOwner.walkDays)}</li>
+        <li>Walk Time Window: ${checkforEmptyValues(dogOwner.walkTimeRange)}</li>
+        <li>Phone Number: ${checkforEmptyValues(dogOwner.phoneNumber)}</li>
+        <li>Email: ${checkforEmptyValues(dogOwner.email)}</li>
+        <li>Notes: ${dogOwner.notes}</li>
       </ul>
     </div>
   `);
@@ -52,9 +56,9 @@ function renderDogOwnerDetails(dogOwner) {
 // Checks if some values are empty. If they are, remove from page
 function checkforEmptyValues(dogOwnerDetail) {
   if (dogOwnerDetail === 'undefined') {
-    return `<li hidden>${dogOwnerDetail}</li>`;
+    return '';
   } else {
-    return `<li>${dogOwnerDetail}</li>`;
+    return dogOwnerDetail;
   }
 }
 
@@ -65,35 +69,100 @@ function renderEditDogOwnerDetails(dogOwner) {
     <form id="edit-client-form">
       <fieldset>
         <legend>Edit Client Details</legend>
-        <label for="firstName-edit-client">
-          First Name: <input id="firstName-edit-client" type="text" name="firstName" value=${dogOwner.firstName} required>
-        </label>
-        <label for="lastName-edit-client">
-          Last Name: <input id="lastName-edit-client" type="text" name="lastName" value=${dogOwner.lastName} required>
-        </label>
-        <label for="dogNames-edit-client">
-          Dog Name(s): <textarea id="dogNames-edit-client" name="dogNames" required>${dogOwner.dogNames}</textarea>
-        </label>
-        <label for="address-edit-client">
-          Address: <textarea id="address-edit-client" name="address" required>${dogOwner.address}</textarea
-        </label>
-        <label for="notes-edit-client">
-          Notes: <textarea id="notes-edit-client" row="50" cols="40" name="notes" required>${dogOwner.notes}</textarea>
-        </label>
-        <label for="walkTimeRange-edit-client">
-          Walk Time Range: <input id="walkTimeRange-edit-client" type="text" name="walkTimeRange" value=${dogOwner.walkTimeRange}>
-        </label>
-        <label for="walkDays-edit-client">
-          Days Walk Needed: <input id="walkDays-edit-client" type="text" name="walkDays" value=${dogOwner.walkDays}>
-        </label>
-        <label for="phoneNumber-edit-client">
-          Phone Number: <input id="phoneNumber-edit-client" type="text" name="phoneNumber" value=${dogOwner.phoneNumber}>
-        </label>
-        <label for="email-edit-client">
-          Email: <input id="email-edit-client" type="email" name="email" value=${dogOwner.email}>
-        </label>
-        <input type="submit" id="submit-edit-client-btn" name="submit-edit-client" value="Save Changes">
-        <input type="button" id="cancel-edit-client-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">
+        <div class="row">
+          <div class="col-3">
+            <label for="firstName-edit-client">
+              First Name:
+            </label>
+          </div>
+          <div class="col-9">
+            <input id="firstName-edit-client" class="form-input" type="text" name="firstName" value=${dogOwner.firstName} required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="lastName-edit-client">
+              Last Name:
+            </label>
+          </div>
+          <div class="col-9">
+            <input id="lastName-edit-client" class="form-input" type="text" name="lastName" value=${dogOwner.lastName} required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="dogNames-edit-client">
+              Dog Name(s):
+            </label>
+          </div>
+          <div class="col-9">
+            <textarea id="dogNames-edit-client" class="form-input" name="dogNames" required>${dogOwner.dogNames}</textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="address-edit-client">
+              Address:
+            </label>
+          </div>
+          <div class="col-9">
+            <textarea id="address-edit-client" class="form-input" name="address" required>${dogOwner.address}</textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="notes-edit-client">
+              Notes:
+            </label>
+          </div>
+          <div class="col-9">
+            <textarea id="notes-edit-client" class="form-input" name="notes" required>${dogOwner.notes}</textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="walkTimeRange-edit-client">
+              Walk Time Range:
+            </label>
+          </div>
+          <div class="col-9">
+            <input id="walkTimeRange-edit-client" class="form-input" type="text" name="walkTimeRange" value=${dogOwner.walkTimeRange}>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="walkDays-edit-client">
+              Days Walk Needed:
+            </label>
+          </div>
+          <div class="col-9">
+            <input id="walkDays-edit-client" class="form-input" type="text" name="walkDays" value=${dogOwner.walkDays}>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="phoneNumber-edit-client">
+              Phone Number:
+            </label>
+          </div>
+          <div class="col-9">
+            <input id="phoneNumber-edit-client" class="form-input" type="text" name="phoneNumber" value=${dogOwner.phoneNumber}>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-3">
+            <label for="email-edit-client">
+              Email:
+            </label>
+          </div>
+          <div class="col-9">
+            <input id="email-edit-client" class="form-input" type="email" name="email" value=${dogOwner.email}>
+          </div>
+        </div>
+        <div class="center-btns">
+          <input type="submit" id="submit-edit-client-btn" class="edit-client-btn" name="submit-edit-client" value="Save Changes">
+          <input type="button" id="cancel-edit-client-btn" class="edit-client-btn cancel-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">
+        </div>
       </fieldset>
     </form>
   `);

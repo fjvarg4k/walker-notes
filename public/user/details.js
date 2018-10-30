@@ -10,6 +10,7 @@ function onPageLoad() {
   checkUserValidation();
   watchEditBtn();
   watchLogoutBtn();
+  toggleHamburgerMenu();
 
   STATE.dogOwnerId = MISC.getQueryStringParam('id');
   STATE.authUser = CACHE.getAuthenticatedUser();
@@ -32,10 +33,7 @@ function checkUserValidation() {
 // If edit button is clicked, load edit page for that specific client
 function watchEditBtn() {
   $('#edit-btn').click(event => {
-    // event.stopImmediatePropagation();
-    // const dogOwnerId = $('#dogOwner-details').attr('dogOwner-id-data');
     const queryString = window.location.search;
-    // window.open(`./dog-edit.html?id=${dogOwnerId}`, '_self');
     window.open(`./dog-edit.html${queryString}`, '_self');
   });
 }
@@ -45,5 +43,11 @@ function watchLogoutBtn() {
   $('#logout-btn').click(event => {
     CACHE.deleteAuthenticatedUser();
     window.open('/', '_self');
+  });
+}
+
+function toggleHamburgerMenu() {
+  $('.hamburger-icon').click(event => {
+    $('.main-menu-link').toggleClass('toggle-links');
   });
 }

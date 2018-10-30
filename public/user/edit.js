@@ -10,6 +10,7 @@ function onPageLoad() {
   checkUserValidation();
   watchLogoutBtn()
   watchEditForm();
+  toggleHamburgerMenu();
 
   STATE.dogOwnerId = MISC.getQueryStringParam('id');
   STATE.authUser = CACHE.getAuthenticatedUser();
@@ -66,5 +67,11 @@ function watchLogoutBtn() {
   $('#logout-btn').click(event => {
     CACHE.deleteAuthenticatedUser();
     window.open('/', '_self');
+  });
+}
+
+function toggleHamburgerMenu() {
+  $('.hamburger-icon').click(event => {
+    $('.main-menu-link').toggleClass('toggle-links');
   });
 }
