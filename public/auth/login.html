@@ -4,30 +4,39 @@
     <meta charset="utf-8">
     <meta name="description" content="Keep track of dog walking client info">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../walker-notes.css">
     <title>Login</title>
   </head>
   <body>
-    <nav role="navigation">
-      <h1><a href="/">Walker Notes</a></h1>
-      <div id="login-menu">
-        <ul>
-          <li><a href="./signup.html">Sign Up</a></li>
-          <!-- <li><a href="/">Demo</a></li> -->
-        </ul>
-      </div>
+    <nav role="navigation" class="main-menu">
+      <a class="main-title" href="/">Walker Notes</a>
+      <a class="main-menu-link" href="./signup.html">Sign Up</a>
+      <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+      <!-- <a href="/">Demo</a>-->
     </nav>
 
     <main role="main">
       <form id="login-form">
         <fieldset>
           <legend>Login</legend>
-          <label for="username-login">
-            Username: <input id="username-login" type="text" name="username" required>
-          </label>
-          <label for="password-login">
-            Password: <input id="password-login" type="password" name="password" required>
-          </label>
-          <input type="submit" id="submit-login-btn" name="submit-login" value="Login">
+          <div class="row form-search-input">
+            <label for="username-login">
+              Username:
+            </label>
+            <input id="username-login" type="text" name="username" required>
+          </div>
+          <div class="row form-search-input">
+            <label for="password-login">
+              Password:
+            </label>
+            <input id="password-login" type="password" name="password" required>
+          </div>
+          <div class="col-12">
+            <input type="submit" id="submit-login-btn" class="login-btn" name="submit-login" value="Login">
+          </div>
         </fieldset>
       </form>
 

@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <meta name="description" content="Keep track of dog walking client info">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../walker-notes.css">
     <title>Add a New Client</title>
   </head>
   <body>
-    <nav role="navigation">
-      <h1><a href="/">Walker Notes</a></h1>
-      <div id="hub-menu">
-        <ul>
-          <li><h4><a href="./hub.html">Back</a></h4></li>
-          <li><button id="logout-btn">Logout</button></li>
-        </ul>
-      </div>
+    <nav role="navigation" class="main-menu">
+      <a class="main-title" href="/">Walker Notes</a>
+      <a class="main-menu-link" href="./hub.html">Back</a>
+      <a id="logout-btn" class="main-menu-link">Logout</a>
+      <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
     </nav>
 
     <main role="main">
@@ -22,34 +23,43 @@
         <fieldset>
           <legend>Add a New Client</legend>
           <label for="firstName-new-client">
-            First Name: <input id="firstName-new-client" type="text" name="firstName" required>
+            First Name:
           </label>
+          <input id="firstName-new-client" type="text" name="firstName" required>
           <label for="lastName-new-client">
-            Last Name: <input id="lastName-new-client" type="text" name="lastName" required>
+            Last Name:
           </label>
+          <input id="lastName-new-client" type="text" name="lastName" required>
           <label for="dogNames-new-client">
-            Dog Name(s): <input id="dogNames-new-client" type="text" name="dogNames" required>
+            Dog Name(s):
           </label>
+          <input id="dogNames-new-client" type="text" name="dogNames" required>
           <label for="address-new-client">
-            Address: <input id="address-new-client" type="text" name="address" required>
+            Address:
           </label>
+          <input id="address-new-client" type="text" name="address" required>
           <label for="notes-new-client">
-            Notes: <textarea id="notes-new-client" row="50" cols="40" name="notes" required></textarea>
+            Notes:
           </label>
+          <textarea id="notes-new-client" row="50" cols="30" name="notes" required></textarea>
           <label for="walkTimeRange-new-client">
-            Walk Time Range: <input id="walkTimeRange-new-client" type="text" name="walkTimeRange">
+            Walk Time Range:
           </label>
+          <input id="walkTimeRange-new-client" type="text" name="walkTimeRange">
           <label for="walkDays-new-client">
-            Days Walk Needed: <input id="walkDays-new-client" type="text" name="walkDays">
+            Days Walk Needed:
           </label>
+          <input id="walkDays-new-client" type="text" name="walkDays">
           <label for="phoneNumber-new-client">
-            Phone Number: <input id="phoneNumber-new-client" type="text" name="phoneNumber">
+            Phone Number:
           </label>
+          <input id="phoneNumber-new-client" type="text" name="phoneNumber">
           <label for="email-new-client">
-            Email: <input id="email-new-client" type="email" name="email">
+            Email:
           </label>
-          <input type="submit" id="submit-new-client-btn" name="submit-new-client" value="Submit">
-          <input type="button" id="cancel-new-client-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">
+          <input id="email-new-client" type="email" name="email">
+          <input type="submit" id="submit-new-client-btn" class="new-client-btn" name="submit-new-client" value="Submit">
+          <input type="button" id="cancel-new-client-btn" class="new-client-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">
         </fieldset>
       </form>
 

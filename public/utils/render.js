@@ -11,13 +11,20 @@ function renderDogOwnersList(dogOwners) {
 
   // Takes each individual dog owner and displays the requested info
   function dogOwnerToHtml(dogOwner) {
+    let notesShorten = dogOwner.notes;
+    if (notesShorten.length > 120) {
+      notesShorten = `${dogOwner.notes.substring(0, 120)}...`;
+    }
     return `
-      <div id="dogOwner-card" dogOwner-id-data="${dogOwner.id}">
-        <ul>
-          <li class="dogOwner-card-header"><h3>${dogOwner.firstName} ${dogOwner.lastName}
-          <button id="delete-dogOwner-btn">Delete</button></h3></li>
-          <li class="dogOwner-card-dogName">${dogOwner.dogNames}</li>
-          <li class="dogOwner-card-address">${dogOwner.address}</li>
+      <div id="dogOwner-card" class="dogOwner-card" dogOwner-id-data="${dogOwner.id}">
+        <ul class="client-info">
+          <div class="client-header">
+            <li class="dogOwner-card-header">${dogOwner.firstName} ${dogOwner.lastName}</li>
+            <li><button id="delete-dogOwner-btn" class="delete-btn">Delete</button></li>
+          </div>
+          <li class="dogOwner-card-dogName">Dog(s): ${dogOwner.dogNames}</li>
+          <li class="dogOwner-card-address">Address: ${dogOwner.address}</li>
+          <li class="dogOwner-card-notes">Notes: ${notesShorten}</li>
         </ul>
       </div>
     `;

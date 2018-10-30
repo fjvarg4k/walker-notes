@@ -4,47 +4,65 @@
     <meta charset="utf-8">
     <meta name="description" content="Keep track of dog walking client info">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../walker-notes.css">
     <title>Signup</title>
   </head>
   <body>
-    <nav role="navigation">
-      <h1><a href="/">Walker Notes</a></h1>
-      <div id="signup-menu">
-        <ul>
-          <li><a href="./login.html">Log in</a></li>
-          <!-- <li><a href="/">Demo</a></li> -->
-        </ul>
-      </div>
+    <nav role="navigation" class="main-menu">
+      <a class="main-title" href="/">Walker Notes</a>
+      <a class="main-menu-link" href="./login.html">Log in</a>
+      <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+      <!-- <a href="/">Demo</a> -->
     </nav>
 
     <main role="main">
       <form id="sign-up-form">
         <fieldset>
           <legend>Sign up</legend>
-          <label for="firstName-signup">
-            First Name: <input id="firstName-signup" type="text" name="firstName" required>
-          </label>
-          <label for="lastName-signup">
-            Last Name: <input id="lastName-signup" type="text" name="lastName" required>
-          </label>
-          <label for="username-signup">
-            Username: <input id="username-signup" type="text" name="username" required>
-          </label>
-          <label for="password-signup">
-            Password: <input id="password-signup" type="password" name="password" required>
-          </label>
-          <input type="submit" id="submit-signup-btn" name="submit-signup" value="Create Account">
+          <div class="row form-search-input">
+            <label for="firstName-signup">
+              First Name:
+            </label>
+            <input id="firstName-signup" type="text" name="firstName" required>
+          </div>
+          <div class="row form-search-input">
+            <label for="lastName-signup">
+              Last Name:
+            </label>
+            <input id="lastName-signup" type="text" name="lastName" required>
+          </div>
+          <div class="row form-search-input">
+            <label for="username-signup">
+              Username:
+            </label>
+            <input id="username-signup" type="text" name="username" required>
+          </div>
+          <div class="row form-search-input">
+            <label for="password-signup">
+              Password:
+            </label>
+            <input id="password-signup" type="password" name="password" required>
+          </div>
+          <div class="col-12">
+            <input type="submit" id="submit-signup-btn" class="signup-btn" name="submit-signup" value="Create Account">
+          </div>
         </fieldset>
       </form>
 
       <div id="error-message"></div>
     </main>
 
+    <footer>
+
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../utils/cache.js"></script>
     <script src="../utils/render.js"></script>
     <script src="../utils/http.js"></script>
-    <!-- <script src="../index.js"></script> -->
     <script src="auth.js"></script>
   </body>
 </html>

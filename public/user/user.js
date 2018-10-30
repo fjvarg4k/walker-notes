@@ -12,6 +12,7 @@ function onPageLoad() {
   updateAuthUI();
   watchDogOwnerCard();
   watchDeleteBtn();
+  toggleHamburgerMenu();
 
   if (STATE.authUser) {
     HTTP.getUserClientsInfo({
@@ -77,4 +78,10 @@ function watchDeleteBtn() {
       });
     }
   })
+}
+
+function toggleHamburgerMenu() {
+  $('.hamburger-icon').click(event => {
+    $('.main-menu-link').toggleClass('toggle-links');
+  });
 }

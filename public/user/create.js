@@ -9,6 +9,7 @@ function onPageLoad() {
   checkUserValidation();
   watchCreationForm();
   watchLogoutBtn();
+  toggleHamburgerMenu();
 
   STATE.authUser = CACHE.getAuthenticatedUser();
 }
@@ -59,5 +60,11 @@ function watchLogoutBtn() {
   $('#logout-btn').click(event => {
     CACHE.deleteAuthenticatedUser();
     window.open('/', '_self');
+  });
+}
+
+function toggleHamburgerMenu() {
+  $('.hamburger-icon').click(event => {
+    $('.main-menu-link').toggleClass('toggle-links');
   });
 }

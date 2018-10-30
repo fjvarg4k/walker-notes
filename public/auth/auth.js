@@ -7,6 +7,7 @@ $(document).ready(onPageLoad);
 function onPageLoad() {
   watchSignUpForm();
   watchLoginForm();
+  toggleHamburgerMenu();
 }
 
 function watchSignUpForm() {
@@ -26,7 +27,7 @@ function watchSignUpForm() {
       },
       onError: err => {
         $('#error-message').html(`
-          <p>There was an issue processing your request, please try again later.</p>
+          <p>Please enter valid info.</p>
         `);
       }
     });
@@ -51,9 +52,15 @@ function watchLoginForm() {
       },
       onError: err => {
         $('#error-message').html(`
-          <p>There was an issue processing your request, please try again later.</p>
+          <p>Your username and/or password were incorrect.</p>
         `);
       }
     });
+  });
+}
+
+function toggleHamburgerMenu() {
+  $('.hamburger-icon').click(event => {
+    $('.main-menu-link').toggleClass('toggle-links');
   });
 }

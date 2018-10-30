@@ -4,26 +4,41 @@
     <meta charset="utf-8">
     <meta name="description" content="Keep track of dog walking client info">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="./walker-notes.css">
     <title>Walker Notes</title>
   </head>
   <body>
 
-    <nav role="navigation">
-      <h1><a href="/">Walker Notes</a></h1>
-      <div id="unauthenticated-menu" hidden>
-        <ul>
-          <li><a href="/auth/signup.html">Sign Up</a></li>
-          <li><a href="/auth/login.html">Log in</a></li>
-          <!-- <li><a href="/">Demo</a></li> -->
-        </ul>
-      </div>
-      <div id="authenticated-menu" hidden>
-        <ul>
-          <li><a href="./user/hub.html">View Client Info</a></li>
-          <li><a href="/">Log out</a></li>
-        </ul>
-      </div>
+    <nav role="navigation" id="unauthenticated-menu" class="main-menu">
+      <!-- <div id="unauthenticated-menu" hidden> -->
+        <a class="main-title" href="/">Walker Notes</a>
+        <a class="main-menu-link" href="/auth/signup.html">Sign Up</a>
+        <a class="main-menu-link" href="/auth/login.html">Log in</a>
+        <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+        <!-- <a href="/">Demo</a> -->
+      <!-- </div> -->
     </nav>
+    <nav role="navigation" id="authenticated-menu" class="main-menu">
+      <!-- <div id="authenticated-menu" hidden> -->
+        <a class="main-title" href="/">Walker Notes</a>
+        <a class="main-menu-link" href="./user/hub.html">View Client Info</a>
+        <a id="logout-btn" class="main-menu-link" href="/">Log out</a>
+        <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+      <!-- </div> -->
+    </nav>
+
+    <main role="main">
+      <div class="main-page-img">
+
+      </div>
+    </main>
+
+    <footer>
+
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="./utils/cache.js"></script>
