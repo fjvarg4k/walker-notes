@@ -14,6 +14,7 @@ function onPageLoad() {
   watchDeleteBtn();
   toggleHamburgerMenu();
 
+  // Checks if user is authenticated and if so grabs a list of their clients' info
   if (STATE.authUser) {
     HTTP.getUserClientsInfo({
       jwtToken: STATE.authUser.jwtToken,
@@ -80,6 +81,7 @@ function watchDeleteBtn() {
   })
 }
 
+// Toggles hamburger menu on and off
 function toggleHamburgerMenu() {
   $('.hamburger-icon').click(event => {
     $('.main-menu-link').toggleClass('toggle-links');

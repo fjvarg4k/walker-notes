@@ -11,69 +11,75 @@
     <title>Signup</title>
   </head>
   <body>
-    <nav role="navigation" class="main-menu">
-      <a class="main-title" href="/">Walker Notes</a>
-      <a class="main-menu-link" href="./login.html">Log in</a>
-      <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
-      <!-- <a href="/">Demo</a> -->
-    </nav>
+    <div class="wrapper">
+      <nav role="navigation" class="main-menu">
+        <a class="main-title" href="/">Walker Notes</a>
+        <a class="main-menu-link" href="./login.html">Log in</a>
+        <a id="demo-login" class="main-menu-link" href="javascript:;">Demo</a>
+        <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+      </nav>
 
-    <main role="main">
-      <form id="sign-up-form">
-        <fieldset>
-          <legend>Sign up</legend>
-          <div class="row">
-            <div class="col-3 signup-form-label">
-              <label class="form-label" for="firstName-signup">
-                First Name:
-              </label>
+      <main role="main">
+        <form id="sign-up-form">
+          <fieldset>
+            <legend>Sign up</legend>
+            <div class="row">
+              <div class="col-3 signup-form-label">
+                <label class="form-label" for="firstName-signup">
+                  First Name:
+                </label>
+              </div>
+              <div class="col-6">
+                <input id="firstName-signup" class="form-input" type="text" name="firstName" required>
+              </div>
             </div>
-            <div class="col-6">
-              <input id="firstName-signup" class="form-input" type="text" name="firstName" required>
+            <div class="row">
+              <div class="col-3 signup-form-label">
+                <label class="form-label" for="lastName-signup">
+                  Last Name:
+                </label>
+              </div>
+              <div class="col-6">
+                <input id="lastName-signup" class="form-input" type="text" name="lastName" required>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3 signup-form-label">
-              <label class="form-label" for="lastName-signup">
-                Last Name:
-              </label>
+            <div class="row">
+              <div class="col-3 signup-form-label">
+                <label class="form-label" for="username-signup">
+                  Username:
+                </label>
+              </div>
+              <div class="col-6">
+                <input id="username-signup" class="form-input" type="text" name="username" required>
+              </div>
             </div>
-            <div class="col-6">
-              <input id="lastName-signup" class="form-input" type="text" name="lastName" required>
+            <div class="row">
+              <div class="col-3 signup-form-label">
+                <label class="form-label" for="password-signup">
+                  Password:
+                </label>
+              </div>
+              <div class="col-6">
+                <input id="password-signup" class="form-input" type="password" name="password" required>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3 signup-form-label">
-              <label class="form-label" for="username-signup">
-                Username:
-              </label>
+            <div class="col-12">
+              <input type="submit" id="submit-signup-btn" class="signup-btn" name="submit-signup" value="Create Account">
             </div>
-            <div class="col-6">
-              <input id="username-signup" class="form-input" type="text" name="username" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-3 signup-form-label">
-              <label class="form-label" for="password-signup">
-                Password:
-              </label>
-            </div>
-            <div class="col-6">
-              <input id="password-signup" class="form-input" type="password" name="password" required>
-            </div>
-          </div>
-          <div class="col-12">
-            <input type="submit" id="submit-signup-btn" class="signup-btn" name="submit-signup" value="Create Account">
-          </div>
-        </fieldset>
-      </form>
+          </fieldset>
+        </form>
 
-      <div id="error-message"></div>
-    </main>
+        <div id="error-message"></div>
+      </main>
 
-    <footer>
+      <footer role="contentinfo">
+        <p>Created By Francisco Vargas</p>
+        <a href="https://www.linkedin.com/in/francisco-vargas-246414169/"><i class="fab fa-linkedin footer-icon"></i></a>
+        <a href="https://github.com/fjvarg4k"><i class="fab fa-github-square footer-icon"></i></a>
+        <a href="https://twitter.com/franpanchomon"><i class="fab fa-twitter-square footer-icon"></i></a>
+      </footer>
 
-    </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../utils/cache.js"></script>

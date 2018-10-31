@@ -27,11 +27,13 @@ app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/owner', dogOwnerRouter);
 
-// If we make an HTTP request that is not handled by the server, we return 404 'Not Found'
+// If an HTTP request that is not handled by the server is made, return 404 'Not Found'
 app.use('*', (req, res) => {
   return res.status(404).json({ message: 'Not Found' });
 });
 
+
+// Starts up the server on the correct port
 function runServer(databaseURL, port = PORT) {
   return new Promise((resolve, reject) => {
     mongoose.connect(databaseURL, err => {
@@ -50,6 +52,7 @@ function runServer(databaseURL, port = PORT) {
   });
 }
 
+// Shuts down the server
 function closeServer() {
   return mongoose.disconnect().then(() => {
     return new Promise((resolve, reject) => {
@@ -63,8 +66,6 @@ function closeServer() {
     });
   });
 }
-
-// app.listen(process.env.PORT || 8080);
 
 if (require.main === module) {
   runServer(DATABASE_URL).catch(err => console.error(err));

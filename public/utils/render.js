@@ -63,7 +63,6 @@ function checkforEmptyValues(dogOwnerDetail) {
 }
 
 // Renders an editable view of a specific dog walking client's info
-
 function renderEditDogOwnerDetails(dogOwner) {
   $('#edit-client-details').html(`
     <form id="edit-client-form">

@@ -11,116 +11,126 @@
     <title>Add a New Client</title>
   </head>
   <body>
-    <nav role="navigation" class="main-menu">
-      <a class="main-title" href="/">Walker Notes</a>
-      <a class="main-menu-link" href="./hub.html">Back</a>
-      <a id="logout-btn" class="main-menu-link">Logout</a>
-      <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
-    </nav>
+    <div class="wrapper">
+      <nav role="navigation" class="main-menu">
+        <a class="main-title" href="/">Walker Notes</a>
+        <a class="main-menu-link" href="./hub.html">Back</a>
+        <a id="logout-btn" class="main-menu-link">Logout</a>
+        <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+      </nav>
 
-    <main role="main">
-      <form id="new-client-form" class="new-client-form">
-        <fieldset>
-          <legend>Add a New Client</legend>
-          <div class="row">
-            <div class="col-3">
-              <label for="firstName-new-client">
-                First Name:
-              </label>
+      <main role="main">
+        <form id="new-client-form" class="new-client-form">
+          <fieldset>
+            <legend>Add a New Client</legend>
+            <div class="row">
+              <div class="col-3">
+                <label for="firstName-new-client">
+                  First Name:
+                </label>
+              </div>
+              <div class="col-9">
+                <input id="firstName-new-client" class="form-input" type="text" name="firstName" required>
+              </div>
             </div>
-            <div class="col-9">
-              <input id="firstName-new-client" class="form-input" type="text" name="firstName" required>
+            <div class="row">
+              <div class="col-3">
+                <label for="lastName-new-client">
+                  Last Name:
+                </label>
+              </div>
+              <div class="col-9">
+                <input id="lastName-new-client" class="form-input" type="text" name="lastName" required>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label for="lastName-new-client">
-                Last Name:
-              </label>
+            <div class="row">
+              <div class="col-3">
+                <label for="dogNames-new-client">
+                  Dog Name(s):
+                </label>
+              </div>
+              <div class="col-9">
+                <textarea id="dogNames-new-client" class="form-input" name="dogNames" required></textarea>
+              </div>
             </div>
-            <div class="col-9">
-              <input id="lastName-new-client" class="form-input" type="text" name="lastName" required>
+            <div class="row">
+              <div class="col-3">
+                <label for="address-new-client">
+                  Address:
+                </label>
+              </div>
+              <div class="col-9">
+                <textarea id="address-new-client" class="form-input" name="address" required></textarea>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label for="dogNames-new-client">
-                Dog Name(s):
-              </label>
+            <div class="row">
+              <div class="col-3">
+                <label for="notes-new-client">
+                  Notes:
+                </label>
+              </div>
+              <div class="col-9">
+                <textarea id="notes-new-client" class="form-input" name="notes" required></textarea>
+              </div>
             </div>
-            <div class="col-9">
-              <textarea id="dogNames-new-client" class="form-input" name="dogNames" required></textarea>
+            <div class="row">
+              <div class="col-3">
+                <label class="form-label" for="walkTimeRange-new-client">
+                  Walk Time Range:
+                </label>
+              </div>
+              <div class="col-9">
+                <input id="walkTimeRange-new-client" class="form-input" type="text" name="walkTimeRange">
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label for="address-new-client">
-                Address:
-              </label>
+            <div class="row">
+              <div class="col-3">
+                <label class="form-label" for="walkDays-new-client">
+                  Days Walk Needed:
+                </label>
+              </div>
+              <div class="col-9">
+                <input id="walkDays-new-client" class="form-input" type="text" name="walkDays">
+              </div>
             </div>
-            <div class="col-9">
-              <textarea id="address-new-client" class="form-input" name="address" required></textarea>
+            <div class="row">
+              <div class="col-3">
+                <label class="form-label" for="phoneNumber-new-client">
+                  Phone Number:
+                </label>
+              </div>
+              <div class="col-9">
+                <input id="phoneNumber-new-client" class="form-input" type="text" name="phoneNumber">
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label for="notes-new-client">
-                Notes:
-              </label>
+            <div class="row">
+              <div class="col-3">
+                <label class="form-label" for="email-new-client">
+                  Email:
+                </label>
+              </div>
+              <div class="col-9">
+                <input id="email-new-client" class="form-input" type="email" name="email">
+              </div>
             </div>
-            <div class="col-9">
-              <textarea id="notes-new-client" class="form-input" name="notes" required></textarea>
+            <div class="center-btns">
+              <input type="submit" id="submit-new-client-btn" class="new-client-btn" name="submit-new-client" value="Submit">
+              <input type="button" id="cancel-new-client-btn" class="new-client-btn cancel-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label class="form-label" for="walkTimeRange-new-client">
-                Walk Time Range:
-              </label>
-            </div>
-            <div class="col-9">
-              <input id="walkTimeRange-new-client" class="form-input" type="text" name="walkTimeRange">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label class="form-label" for="walkDays-new-client">
-                Days Walk Needed:
-              </label>
-            </div>
-            <div class="col-9">
-              <input id="walkDays-new-client" class="form-input" type="text" name="walkDays">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label class="form-label" for="phoneNumber-new-client">
-                Phone Number:
-              </label>
-            </div>
-            <div class="col-9">
-              <input id="phoneNumber-new-client" class="form-input" type="text" name="phoneNumber">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-3">
-              <label class="form-label" for="email-new-client">
-                Email:
-              </label>
-            </div>
-            <div class="col-9">
-              <input id="email-new-client" class="form-input" type="email" name="email">
-            </div>
-          </div>
-          <div class="center-btns">
-            <input type="submit" id="submit-new-client-btn" class="new-client-btn" name="submit-new-client" value="Submit">
-            <input type="button" id="cancel-new-client-btn" class="new-client-btn cancel-btn" onclick="window.location.href='./hub.html'" name="cancel" value="Cancel">
-          </div>
-        </fieldset>
-      </form>
+          </fieldset>
+        </form>
 
-      <div id="error-message"></div>
-    </main>
+        <div id="error-message"></div>
+      </main>
+
+      <footer role="contentinfo">
+        <p>Created By Francisco Vargas</p>
+        <a href="https://www.linkedin.com/in/francisco-vargas-246414169/"><i class="fab fa-linkedin footer-icon"></i></a>
+        <a href="https://github.com/fjvarg4k"><i class="fab fa-github-square footer-icon"></i></a>
+        <a href="https://twitter.com/franpanchomon"><i class="fab fa-twitter-square footer-icon"></i></a>
+      </footer>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../utils/cache.js"></script>

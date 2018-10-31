@@ -53,7 +53,6 @@ describe('tests for /api/auth', function() {
   });
 
   afterEach(function() {
-    // return User.remove({});
     return new Promise((resolve, reject) => {
       mongoose.connection.dropDatabase()
         .then(res => {
@@ -82,7 +81,6 @@ describe('tests for /api/auth', function() {
           expect(res).to.have.status(200);
           expect(res).to.be.json;
           expect(res.body).to.be.an('object');
-          // const token = res.body.authToken;
           const payload = jsonwebtoken.verify(res.body.jwtToken, JWT_SECRET, {
             algorithm: ['HS256']
           });

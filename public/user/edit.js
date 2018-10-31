@@ -12,9 +12,11 @@ function onPageLoad() {
   watchEditForm();
   toggleHamburgerMenu();
 
+  // Grabs dog owner id from query string, grabs user info from localStorage
   STATE.dogOwnerId = MISC.getQueryStringParam('id');
   STATE.authUser = CACHE.getAuthenticatedUser();
 
+  // Grabs dog owner info based on id provided, displays details
   HTTP.getDogOwnerById({
     dogOwnerId: STATE.dogOwnerId,
     onSuccess: RENDER.renderEditDogOwnerDetails
@@ -30,6 +32,7 @@ function checkUserValidation() {
   }
 }
 
+// Waits for edit form to be submitted, saves the provided data
 function watchEditForm() {
   $('#edit-client-details').on('submit', '#edit-client-form', event => {
     event.preventDefault();
@@ -45,6 +48,7 @@ function watchEditForm() {
       email: $('#email-edit-client').val()
     };
 
+    // Updates dog owner info based on provided data
     HTTP.updateDogOwner({
       dogOwnerId: STATE.dogOwnerId,
       newDogOwner: newDogOwner,
@@ -70,6 +74,7 @@ function watchLogoutBtn() {
   });
 }
 
+// Toggles hamburger menu on and off
 function toggleHamburgerMenu() {
   $('.hamburger-icon').click(event => {
     $('.main-menu-link').toggleClass('toggle-links');

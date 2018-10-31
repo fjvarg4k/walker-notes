@@ -4,6 +4,7 @@ window.CACHE = {
   deleteAuthenticatedUser
 };
 
+// Grabs the authenticated user data and verifies that it has a jwtToken
 function getAuthenticatedUser() {
   const jwtToken = localStorage.getItem('jwtToken');
   const userid = localStorage.getItem('userid');
@@ -24,6 +25,7 @@ function getAuthenticatedUser() {
   }
 }
 
+// Save the authenticated user data to localStorage
 function saveAuthenticatedUser(user) {
   localStorage.setItem('jwtToken', user.jwtToken);
   localStorage.setItem('userid', user.id);
@@ -32,6 +34,7 @@ function saveAuthenticatedUser(user) {
   localStorage.setItem('lastName', user.lastName);
 }
 
+// Deletes authenticated user data from localStorage
 function deleteAuthenticatedUser() {
   localStorage.removeItem('jwtToken');
   localStorage.removeItem('userid');

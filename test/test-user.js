@@ -11,7 +11,6 @@ chai.use(chaiHttp);
 describe('tests for /api/user', function() {
   let testUser;
 
-  // Start up the test server before running tests
   before(function() {
     return runServer(TEST_DATABASE_URL);
   });

@@ -12,13 +12,16 @@ function onPageLoad() {
   toggleHamburgerMenu();
 }
 
+// Loads up navbar based on whether used is authenticated or not
 function updateAuthUI() {
   const authUser = CACHE.getAuthenticatedUser();
   if (authUser) {
     STATE.authUser = authUser;
     $('#authenticated-menu').css('display', 'block');
+    $('#authenticated-menu').addClass('main-menu');
   } else {
     $('#unauthenticated-menu').css('display', 'block');
+    $('#unauthenticated-menu').addClass('main-menu');
   }
 }
 
@@ -55,6 +58,7 @@ function watchDemoBtn() {
   })
 }
 
+// Toggles hamburger menu on and off
 function toggleHamburgerMenu() {
   $('.hamburger-icon').click(event => {
     $('.main-menu-link').toggleClass('toggle-links');

@@ -11,6 +11,7 @@ function onPageLoad() {
   watchLogoutBtn();
   toggleHamburgerMenu();
 
+  // Sets STATE.authUser equal to the authenticated user info in localStorage
   STATE.authUser = CACHE.getAuthenticatedUser();
 }
 
@@ -23,6 +24,7 @@ function checkUserValidation() {
   }
 }
 
+// Waits for creation form to be submitted, saves the provided data
 function watchCreationForm() {
   $('#new-client-form').submit(event => {
     event.preventDefault();
@@ -63,6 +65,7 @@ function watchLogoutBtn() {
   });
 }
 
+// Toggles hamburger menu on and off
 function toggleHamburgerMenu() {
   $('.hamburger-icon').click(event => {
     $('.main-menu-link').toggleClass('toggle-links');

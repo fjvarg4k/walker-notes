@@ -11,30 +11,48 @@
     <title>Walker Notes</title>
   </head>
   <body>
+    <div class="wrapper">
+      <nav role="navigation" id="unauthenticated-menu" class="main-menu">
+        <a class="main-title" href="/">Walker Notes</a>
+        <a class="main-menu-link" href="/auth/signup.html">Sign Up</a>
+        <a class="main-menu-link" href="/auth/login.html">Log in</a>
+        <a id="demo-login" class="main-menu-link" href="javascript:;">Demo</a>
+        <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+      </nav>
+      <nav role="navigation" id="authenticated-menu" class="main-menu">
+        <a class="main-title" href="/">Walker Notes</a>
+        <a class="main-menu-link" href="./user/hub.html">View Client Info</a>
+        <a id="logout-btn" class="main-menu-link" href="/">Log out</a>
+        <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+      </nav>
 
-    <nav role="navigation" id="unauthenticated-menu" class="main-menu">
-      <a class="main-title" href="/">Walker Notes</a>
-      <a class="main-menu-link" href="/auth/signup.html">Sign Up</a>
-      <a class="main-menu-link" href="/auth/login.html">Log in</a>
-      <a id="demo-login" class="main-menu-link" href="javascript:;">Demo</a>
-      <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
-    </nav>
-    <nav role="navigation" id="authenticated-menu" class="main-menu">
-      <a class="main-title" href="/">Walker Notes</a>
-      <a class="main-menu-link" href="./user/hub.html">View Client Info</a>
-      <a id="logout-btn" class="main-menu-link" href="/">Log out</a>
-      <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
-    </nav>
+      <main role="main">
+        <div class="main-page-img"></div>
 
-    <main role="main">
-      <div class="main-page-img">
+        <div class="main-page-description">
+          <div class="description-wrapper">
+            <div class="description-container">
+              <i class="far fa-address-card description-icon"></i>
+              <p>Keep track of your clients' and their dogs' information all in one place</p>
+            </div>
+          </div>
+          <div class="description-wrapper">
+            <div class="description-container">
+              <i class="fas fa-dog description-icon"></i>
+              <p>Get back to taking care of your pups</p>
+            </div>
+          </div>
+        </div>
+      </main>
 
-      </div>
-    </main>
+      <footer role="contentinfo">
+        <p>Created By Francisco Vargas</p>
+        <a href="https://www.linkedin.com/in/francisco-vargas-246414169/"><i class="fab fa-linkedin footer-icon"></i></a>
+        <a href="https://github.com/fjvarg4k"><i class="fab fa-github-square footer-icon"></i></a>
+        <a href="https://twitter.com/franpanchomon"><i class="fab fa-twitter-square footer-icon"></i></a>
+      </footer>
 
-    <footer>
-
-    </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="./utils/cache.js"></script>

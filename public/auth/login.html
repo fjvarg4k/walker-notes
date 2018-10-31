@@ -11,45 +11,55 @@
     <title>Login</title>
   </head>
   <body>
-    <nav role="navigation" class="main-menu">
-      <a class="main-title" href="/">Walker Notes</a>
-      <a class="main-menu-link" href="./signup.html">Sign Up</a>
-      <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
-      <!-- <a href="/">Demo</a>-->
-    </nav>
+    <div class="wrapper">
+      <nav role="navigation" class="main-menu">
+        <a class="main-title" href="/">Walker Notes</a>
+        <a class="main-menu-link" href="./signup.html">Sign Up</a>
+        <a id="demo-login" class="main-menu-link" href="javascript:;">Demo</a>
+        <a href="javascript:;" class="hamburger-icon" ><i class="fas fa-bars"></i></a>
+      </nav>
 
-    <main role="main">
-      <form id="login-form">
-        <fieldset>
-          <legend>Login</legend>
-          <div class="row">
-            <div class="col-3 login-form-label">
-              <label class="form-label" for="username-login">
-                Username:
-              </label>
+      <main role="main">
+        <form id="login-form">
+          <fieldset>
+            <legend>Login</legend>
+            <div class="row">
+              <div class="col-3 login-form-label">
+                <label class="form-label" for="username-login">
+                  Username:
+                </label>
+              </div>
+              <div class="col-6">
+                <input id="username-login" class="form-input" type="text" name="username" required>
+              </div>
             </div>
-            <div class="col-6">
-              <input id="username-login" class="form-input" type="text" name="username" required>
+            <div class="row">
+              <div class="col-3 login-form-label">
+                <label class="form-label" for="password-login">
+                  Password:
+                </label>
+              </div>
+              <div class="col-6">
+                <input id="password-login" class="form-input" type="password" name="password" required>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-3 login-form-label">
-              <label class="form-label" for="password-login">
-                Password:
-              </label>
+            <div class="col-12">
+              <input type="submit" id="submit-login-btn" class="login-btn" name="submit-login" value="Login">
             </div>
-            <div class="col-6">
-              <input id="password-login" class="form-input" type="password" name="password" required>
-            </div>
-          </div>
-          <div class="col-12">
-            <input type="submit" id="submit-login-btn" class="login-btn" name="submit-login" value="Login">
-          </div>
-        </fieldset>
-      </form>
+          </fieldset>
+        </form>
 
-      <div id="error-message"></div>
-    </main>
+        <div id="error-message"></div>
+      </main>
+
+      <footer role="contentinfo">
+        <p>Created By Francisco Vargas</p>
+        <a href="https://www.linkedin.com/in/francisco-vargas-246414169/"><i class="fab fa-linkedin footer-icon"></i></a>
+        <a href="https://github.com/fjvarg4k"><i class="fab fa-github-square footer-icon"></i></a>
+        <a href="https://twitter.com/franpanchomon"><i class="fab fa-twitter-square footer-icon"></i></a>
+      </footer>
+
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="../utils/cache.js"></script>

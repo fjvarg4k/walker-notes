@@ -20,6 +20,7 @@ userRouter.post('/', (req, res) => {
     return res.status(422).json({ error: validation.error });
   }
 
+  // Checks that the provided username is not already taken
   User.find({username: newUser.username})
     .count()
     .then(count => {
@@ -28,9 +29,11 @@ userRouter.post('/', (req, res) => {
       }
       return User.hashPassword(newUser.password);
     })
+    // hashes provided password
     .then(passwordHash => {
       newUser.password = passwordHash;
 
+      // Creates a new User object using provided data
       User.create(newUser)
         .then(user => {
           return res.status(201).json(user.serialize());

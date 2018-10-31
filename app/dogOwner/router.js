@@ -20,11 +20,13 @@ dogOwnerRouter.post('/', jwtPassportMiddleware, (req, res) => {
     email: req.body.email
   };
 
+  // Checks that all provided data passes all schema requirements
   const validation = Joi.validate(newDogOwner, dogOwnerJoiSchema);
   if (validation.error) {
     return res.status(422).json({ error: validation.error });
   }
 
+  // Creates a new instance of a dog owner
   DogOwner.create(newDogOwner)
     .then(createdDogOwner => {
       return res.status(201).json(createdDogOwner.serialize());
@@ -88,11 +90,13 @@ dogOwnerRouter.put('/:ownerid', jwtPassportMiddleware, (req, res) => {
     email: req.body.email
   };
 
+  // Checks that all provided data passes all schema requirements
   const validation = Joi.validate(dogOwnerUpdate, dogOwnerJoiSchema);
   if (validation.error) {
     return res.status(422).json({ error: validation.error });
   }
 
+  // Looks for dog owner by id, if found, updates info
   DogOwner.findByIdAndUpdate(req.params.ownerid, dogOwnerUpdate)
     .then(() => {
       return res.status(204).end();

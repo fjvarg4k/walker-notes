@@ -12,9 +12,11 @@ function onPageLoad() {
   watchLogoutBtn();
   toggleHamburgerMenu();
 
+  // Grabs dog owner id from query string, grabs user info from localStorage
   STATE.dogOwnerId = MISC.getQueryStringParam('id');
   STATE.authUser = CACHE.getAuthenticatedUser();
 
+  // Grabs dog owner info based on id provided, displays details
   HTTP.getDogOwnerById({
     dogOwnerId: STATE.dogOwnerId,
     onSuccess: RENDER.renderDogOwnerDetails
@@ -46,6 +48,7 @@ function watchLogoutBtn() {
   });
 }
 
+// Toggles hamburger menu on and off
 function toggleHamburgerMenu() {
   $('.hamburger-icon').click(event => {
     $('.main-menu-link').toggleClass('toggle-links');
