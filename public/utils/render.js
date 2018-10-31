@@ -20,7 +20,7 @@ function renderDogOwnersList(dogOwners) {
         <ul class="client-info">
           <div class="row client-header">
             <div class="col-3">
-              <li class="dogOwner-card-header">${dogOwner.firstName} ${dogOwner.lastName}</li>
+              <li class="dogOwner-card-header dogOwner-name">${dogOwner.firstName} ${dogOwner.lastName}</li>
             </div>
             <div class="col-3"
               <li><button id="delete-dogOwner-btn" class="delete-btn">Delete</button></li>

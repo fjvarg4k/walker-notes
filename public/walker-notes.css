@@ -206,7 +206,7 @@ legend {
   margin: 0;
 }
 
-.dogOwner-card-header:hover {
+.dogOwner-name:hover {
   text-decoration: underline;
   cursor: pointer;
 }
