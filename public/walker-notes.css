@@ -202,8 +202,13 @@ legend {
   margin-bottom: 20px;
 }
 
-.dogOwner-card-header h3 {
+.dogOwner-card-header {
   margin: 0;
+}
+
+.dogOwner-card-header:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .client-header {
