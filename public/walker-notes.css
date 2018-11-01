@@ -87,7 +87,7 @@ nav {
 }
 
 .main-page-img {
-  background: linear-gradient(to right, rgba(142, 158, 171, 0.6), rgba(238, 242, 243, 0.6)), url('./resources/img/home-page-background-sm.jpeg');
+  background-image: url('./resources/img/home-page-background-sm.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -148,8 +148,26 @@ legend {
 .signup-btn:hover,
 .login-btn:hover,
 .new-client-btn:hover,
-.edit-client-btn:hover {
+.edit-client-btn:hover,
+.add-client-btn:hover {
   background-color: #5854B2;
+}
+
+.add-client-btn {
+  text-align: center;
+  display: inline-block;
+  margin: 35px 0;
+  padding: 15px 10px;
+  color: #fff;
+  background-color: #506cf0;
+  outline: none;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.add-client-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .delete-btn {
@@ -191,9 +209,10 @@ legend {
 .dogOwner-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   border-bottom: 1px solid #000;
   margin: 0 auto;
+  padding-left: 10px;
   width: 80%;
 }
 
@@ -313,16 +332,12 @@ footer a:nth-child(3) {
 }
 
 @media screen and (min-width: 780px) {
-  .main-menu a:not(:first-child) {
-    display: block;
-  }
-
   .hamburger-icon {
     display: none !important;
   }
 
   .main-page-img {
-    background: linear-gradient(to right, rgba(142, 158, 171, 0.6), rgba(238, 242, 243, 0.6)), url('./resources/img/home-page-background.jpeg');
+    background-image: url('./resources/img/home-page-background.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -330,5 +345,24 @@ footer a:nth-child(3) {
 
   .description-icon {
     font-size: 28px;
+  }
+
+  .main-menu {
+    text-align: right;
+    font-size: 0;
+  }
+
+  .main-title {
+    float: left;
+  }
+
+  .main-menu a {
+    display: inline-block;
+  }
+
+  .main-menu a:not(:first-child) {
+    /* float: right; */
+    padding: 21px 18px;
+    font-size: 16px;
   }
 }

@@ -31,6 +31,8 @@ function watchSignUpForm() {
       onError: err => {
         $('#error-message').html(`
           <p>Please enter valid info.</p>
+          <p>Username must contain at least 4 characters.</p>
+          <p>Password must contain at least 8 characters</p>
         `);
       }
     });

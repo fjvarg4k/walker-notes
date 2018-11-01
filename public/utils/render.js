@@ -125,7 +125,7 @@ function renderEditDogOwnerDetails(dogOwner) {
             </label>
           </div>
           <div class="col-9">
-            <input id="walkTimeRange-edit-client" class="form-input" type="text" name="walkTimeRange" value=${dogOwner.walkTimeRange}>
+            <input id="walkTimeRange-edit-client" class="form-input" type="text" name="walkTimeRange" value="${dogOwner.walkTimeRange}">
           </div>
         </div>
         <div class="row">
@@ -135,7 +135,7 @@ function renderEditDogOwnerDetails(dogOwner) {
             </label>
           </div>
           <div class="col-9">
-            <input id="walkDays-edit-client" class="form-input" type="text" name="walkDays" value=${dogOwner.walkDays}>
+            <input id="walkDays-edit-client" class="form-input" type="text" name="walkDays" value="${dogOwner.walkDays}">
           </div>
         </div>
         <div class="row">
@@ -145,7 +145,7 @@ function renderEditDogOwnerDetails(dogOwner) {
             </label>
           </div>
           <div class="col-9">
-            <input id="phoneNumber-edit-client" class="form-input" type="text" name="phoneNumber" value=${dogOwner.phoneNumber}>
+            <input id="phoneNumber-edit-client" class="form-input" type="text" name="phoneNumber" value="${dogOwner.phoneNumber}">
           </div>
         </div>
         <div class="row">
