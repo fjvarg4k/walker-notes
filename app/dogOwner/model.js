@@ -47,7 +47,7 @@ const dogOwnerJoiSchema = Joi.object().keys({
   lastName: Joi.string().min(1).trim().required(),
   dogNames: Joi.string().min(1).trim().required(),
   address: Joi.string().trim().required(),
-  notes: Joi.string().min().trim().required(),
+  notes: Joi.string().trim().required(),
   walkTimeRange: Joi.string().trim().allow(''),
   walkDays: Joi.string().trim().allow(''),
   phoneNumber: Joi.string().trim().allow(''),
