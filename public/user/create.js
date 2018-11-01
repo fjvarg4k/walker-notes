@@ -49,7 +49,7 @@ function watchCreationForm() {
       },
       onError: err => {
         $('#error-message').html(`
-          <p>There was an issue processing your request, please try again later.</p>
+          <p>There was an issue processing your request. Please verify that all entries are valid.</p>
         `);
         console.error(err);
       }
